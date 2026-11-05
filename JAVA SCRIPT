@@ -1,0 +1,28 @@
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("Projeto carregado com sucesso!");
+
+
+  const nome = document.getElementById("nome");
+  const form = document.querySelector("form");
+
+
+  if (!form) {
+    console.error("Formulário não encontrado.");
+    return;
+  }
+
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+
+    if (!nome || nome.value.trim() === "") {
+      alert("Preencha o nome antes de enviar.");
+      return;
+    }
+
+
+    alert("Mensagem enviada com sucesso!");
+    form.reset();
+  });
+});
